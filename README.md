@@ -31,6 +31,7 @@ This project is a simple product catalog application built with React. It demons
 
 ```bash
 git clone https://github.com/egaherawati10/dropdown-filters.git
+```
 
 2. Install dependencies:
 
