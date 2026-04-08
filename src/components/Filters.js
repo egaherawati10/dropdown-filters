@@ -3,8 +3,8 @@ import { useSearchParams } from "react-router-dom";
 export default function Filters({ data }) {
     const [ searchParams, setSearchParams ] = useSearchParams();
 
-    const category = searchParams.get("category");
-    const subcategory = searchParams.get("subcategory");
+    const category = searchParams.get("category") || "";
+    const subcategory = searchParams.get("subcategory") || "";
 
     const handleChange = (key, value) => {
         const params = new URLSearchParams(searchParams);
@@ -31,11 +31,12 @@ export default function Filters({ data }) {
     );
 
     return (
-        <div>
+        <div className="flex flex-wrap gap-3 items-center">
             <select
             name="category"
             value={category}
             onChange={(e) => handleChange("category", e.target.value)}
+            className="border rounded-lg px-3 py-1 bg-white"
             >
                 <option value="">Category</option>
                 {data.categories.map((c) => (
@@ -48,6 +49,7 @@ export default function Filters({ data }) {
             value={subcategory}
             disabled={!category}
             onChange={(e) => handleChange("subcategory", e.target.value)}
+            className="border rounded-lg px-3 py-1 bg-white disabled:opacity-50"
             >
                 <option value="">Subcategory</option>
                 {subcategories.map((s) => (
@@ -60,6 +62,7 @@ export default function Filters({ data }) {
             value={searchParams.get("brand") || ""}
             disabled={!subcategory}
             onChange={(e) => handleChange("brand", e.target.value)}
+            className="border rounded-lg px-3 py-1 bg-white disabled:opacity-50"
             >
                 <option value="">Brand</option>
                 {brands.map((b) => (
@@ -67,7 +70,7 @@ export default function Filters({ data }) {
                 ))}
             </select>
 
-            <button onClick={() => setSearchParams({})}>Reset</button>
+            <button onClick={() => setSearchParams({})}>Reset Filter</button>
 
         </div>
     );

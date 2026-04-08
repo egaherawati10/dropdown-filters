@@ -6,7 +6,7 @@ const formatPrice = (price) =>
 
 export default function ProductList({ products }) {
     return (
-        <section>
+        <section className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {products.length === 0 ? (
                 <p>No products found</p>
             ) : (

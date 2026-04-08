@@ -4,10 +4,10 @@ export default function Breadcrumb({ filters, data }) {
     const brand = data.brands.find( b => b.id === filters.brand);
 
     return (
-        <div className="product-breadcrumb" aria-label="breadcrumb">
+        <nav className="product-breadcrumb text-sm text-gray-600" aria-label="breadcrumb">
             {category?.name || ""}
             {sub ? " / " + sub.name : ""}
             {brand ? " / " + brand.name : ""}
-        </div>
+        </nav>
     );
 }

@@ -33,11 +33,13 @@ export default function ProductPage() {
     }
 
     return (
-        <div>
-            <h1>Product Catalog</h1>
+        <div className="min-h-screen bg-gray-200 p-6">
+        <div className="max-w-4xl mx-auto bg-gray-100 p-6 rounded-xl shadow space-y-6">
+            <h1 className="text-2xl font-bold text-gray-800">Product Catalog</h1>
             <Filters data={data} />
             <Breadcrumb filters={filters} data={data} />
             <ProductList products={products} />
+        </div>
         </div>
     )
 }
