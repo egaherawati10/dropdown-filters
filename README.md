@@ -1,70 +1,103 @@
-# Getting Started with Create React App
+# 🛍️ Product Catalog with Cascading Filters
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a simple product catalog application built with React. It demonstrates dynamic filtering using cascading dropdowns (Category → Subcategory → Brand) with URL-based state management.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+* Dynamic product filtering
+* Cascading dropdowns:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  * Category → Subcategory → Brand
+* URL-based state (filters persist on refresh)
+* Breadcrumb navigation
+* Reset filters functionality
+* Responsive UI with Tailwind CSS
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🧠 Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* React (Create React App)
+* React Router DOM (Data API: loader, search params)
+* Tailwind CSS
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## ⚙️ Setup & Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repository:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+git clone https://github.com/egaherawati10/dropdown-filters.git
 
-### `npm run eject`
+2. Install dependencies:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Run the project:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The app will run on:
 
-## Learn More
+```
+http://localhost:3000
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🔍 How It Works
 
-### Code Splitting
+* Filters are stored in the URL using `searchParams`
+* The `loader` reads query parameters and provides data to the page
+* Filtering logic is applied based on:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+  * category → subcategory → brand → products
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🎯 Key Implementation Details
 
-### Making a Progressive Web App
+* No external state management (Redux/Zustand)
+* URL is the single source of truth
+* Uses React Router Data API (`loader`)
+* Accessible breadcrumb with `aria-label="breadcrumb"`
+* Semantic HTML (`<section>` for product list)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 📸 Screenshot
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Initial State (No Filters Applied)
 
-### Deployment
+![Initial State](./public/Screenshots/Initial.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Category Selected
 
-### `npm run build` fails to minify
+![Category Selected](./public/Screenshots/Category.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Subcategory Selected and Brand Activated
+
+![Subcategory Selected and Brand Activated](./public/Screenshots/Subcategory-Brand.png)
+
+Responsive View
+
+![Responsive VIew](./public/Screenshots/Responsive.png)
+
+---
+
+## 📌 Notes
+
+This project was built as part of a coding challenge focusing on frontend architecture, state management, and clean implementation.
+
+---
+
+## 👤 Author
+
+Ega Herawati
